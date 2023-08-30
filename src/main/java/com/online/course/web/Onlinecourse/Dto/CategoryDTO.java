@@ -3,6 +3,6 @@ package com.online.course.web.Onlinecourse.Dto;
 import lombok.Data;
 
 @Data
-public class CategoryDTO {
+public class  CategoryDTO {
     private String name;
 }
