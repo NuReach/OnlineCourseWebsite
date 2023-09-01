@@ -6,6 +6,7 @@ import com.online.course.web.Onlinecourse.Execption.ResourceException;
 import com.online.course.web.Onlinecourse.Mapper.CategoryMapper;
 import com.online.course.web.Onlinecourse.Repository.CategoryRepository;
 import com.online.course.web.Onlinecourse.Service.Category.CategoryService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +18,8 @@ public class CategoryServiceController {
     private  CategoryService categoryService;
     @Autowired
     private CategoryRepository categoryRepository;
+
+    @Autowired
     private  CategoryMapper categoryMapper;
 
 
@@ -24,7 +27,7 @@ public class CategoryServiceController {
     public ResponseEntity<?> createCategories(@RequestBody CategoryDTO dto){
         Category existCategory = categoryRepository.findByName(dto.getName());
         if ( existCategory == null ){
-            Category category = categoryMapper.INSTANCE.toCategory(dto);
+            Category category = categoryMapper.toCategory(dto);
             category = categoryService.createCategory(category);
             return ResponseEntity.ok(category);
         }else {
@@ -44,7 +47,7 @@ public class CategoryServiceController {
 
     @PutMapping("{id}")
     public ResponseEntity<?> updateCategory(@PathVariable("id") Long id, @RequestBody CategoryDTO dto){
-        Category category = CategoryMapper.INSTANCE.toCategory(dto);
+        Category category = categoryMapper.toCategory(dto);
         Category updateCategory = categoryService.updateCategory(id, category);
         return ResponseEntity.ok(updateCategory);
     }

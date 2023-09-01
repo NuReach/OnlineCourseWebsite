@@ -5,3 +5,5 @@ databaseChangeLog:
           - file : db/changelog/001_insert_category.yml
     - include:
           - file : db/changelog/002_insert_course.yml
+    - include:
+          - file : db/changelog/003_insert_video.yml

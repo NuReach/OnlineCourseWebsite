@@ -30,9 +30,9 @@ public class CourseSpec implements Specification<Course> {
             predicates.add(id);
         }
 
-        Join<Course, Category> sale = root.join("category");
+        Join<Course, Category> category = root.join("category");
         if(courseFilter.getCategoryId() != null) {
-            Predicate id = sale.get("id").in(courseFilter.getCategoryId());
+            Predicate id = category.get("id").in(courseFilter.getCategoryId());
             predicates.add(id);
         }
         //return cb.and(predicates.toArray(new Predicate[0]));

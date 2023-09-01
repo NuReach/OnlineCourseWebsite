@@ -20,10 +20,10 @@ public class Video {
     private String description;
 
     @Column(name = "video_link")
-    private String link;
+    private String videoLink;
 
     @Column(name = "video_image")
-    private String image;
+    private String imageLink;
 
     @ManyToOne
     @JoinColumn(name = "course_id")
