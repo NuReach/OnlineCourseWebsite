@@ -1,0 +1,5 @@
+video_id,video_description,video_image,video_link,video_title,course_id
+1,intro to java,linkimage,linkvideo,Introduction,1
+2,println,linkimage,linkvideo,PrintHelloWorld,1
+3,println1,linkimage,linkvideo,PrintHelloWorld2,1
+

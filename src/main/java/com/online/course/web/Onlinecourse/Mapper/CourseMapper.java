@@ -9,7 +9,6 @@ import org.mapstruct.factory.Mappers;
 
 @Mapper(componentModel = "spring",uses = {CategoryService.class})
 public interface CourseMapper {
-    CourseMapper INSTANCE = Mappers.getMapper(CourseMapper.class);
     @Mapping(target = "category",source = "categoryId")
     Course toCourse( CourseDTO dto);
 }

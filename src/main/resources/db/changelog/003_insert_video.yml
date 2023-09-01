@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - changeSet:
+      id: 003_insert_video
+      author: reach
+      changes:
+        - loadData:
+            tableName: videos
+            columns:
+              - column:
+                  name: video_id
+                  type: NUMERIC
+              - column:
+                  name: video_description
+                  type: STRING
+              - column:
+                  name: video_image
+                  type: STRING
+              - column:
+                  name: video_link
+                  type: STRING
+              - column:
+                  name: video_title
+                  type: STRING
+              - column:
+                  name: course_id
+                  type: NUMERIC
+            file: db/changelog/003_insert_video.csv

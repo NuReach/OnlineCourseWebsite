@@ -23,6 +23,7 @@ public class CourseServiceController {
     @Autowired
     private CourseRepository courseRepository;
 
+    @Autowired
     private CourseMapper courseMapper;
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<?> createCourse(@RequestBody CourseDTO dto){
