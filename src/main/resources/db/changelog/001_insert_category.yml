@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001_insert_category
+      author: reach46
+      changes:
+        - loadData:
+            tableName: categories
+            columns:
+              - column:
+                  name: category_id
+                  type: NUMERIC
+              - column:
+                  name: category_name
+                  type: STRING
+            file: db/changelog/001_insert_category.csv
